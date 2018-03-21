@@ -215,22 +215,28 @@
 }
 
 .info_title {
-  lost-utility: clearfix;
+lost-utility: clearfix;
   height: 24px;
+}
+
+.info_description {
+    lost-utility: clearfix;
 }
 
 .event_info img {
   width: 24px;
   height: 24px;
   border-radius: 100px;
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
 .event_info h3 {
   font-weight: 400;
   margin: 0;
   letter-spacing: .5px;
-  float: left;
+  display: inline-block;
   font-size: 14px;
   line-height: 24px;
   margin-left: 5px;
