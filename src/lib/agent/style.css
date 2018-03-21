@@ -1,0 +1,269 @@
+@import '../base.css';
+@import "../mixins.css";
+@import "../variables.css";
+
+.validate_wrapper {
+  lost-utility: clearfix;
+  padding: 20px;
+}
+
+
+.wrapper_header h5 {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 0;
+}
+
+.wrapper_header h5 a {
+    color: $n900;
+    text-decoration: none;
+}
+
+.wrapper_hero {
+  background: $n30;
+  border-radius: 2px;
+  lost-utility: clearfix;
+  margin-top: 30px;
+  height: 160px;
+}
+
+.wrapper_hero .hero_item {
+  lost-column: 1/4;
+  text-align: center;
+}
+
+.hero_item h3 {
+  font-size: 40px;
+  font-weight: 100;
+  margin: 0;
+  margin-top: 40px;
+  color: $n900;
+}
+
+.hero_item h5 {
+  margin-top: 10px;
+  color: $n900;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.accordion {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin-top: 20px;
+}
+
+.accordion_item + .accordion_item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion_title {
+  background-color: #f4f4f4;
+  color: #444;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: left;
+  border: none;
+  position: relative;
+}
+
+.accordion_title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.accordion_title h3 b {
+  text-transform: uppercase;
+}
+
+.accordion_title:hover {
+  background-color: #ddd;
+}
+
+.accordion_body {
+  padding: 20px;
+  display: block;
+  animation: fadein 0.35s ease-in;
+}
+
+.accordion_body_hidden {
+  display: none;
+  opacity: 0;
+  animation: fadein 0.35s ease-in;
+}
+
+.accordion_title > *:last-child,
+.accordion_body > *:last-child {
+  margin-bottom: 0;
+}
+
+.accordion_arrow {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -6px;
+}
+
+.accordion_arrow::after,
+.accordion_arrow::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: currentColor;
+  content: '';
+}
+
+.accordion_arrow::before {
+  left: 4px;
+  transform: rotate(45deg);
+}
+
+[aria-expanded='true'] .accordion_arrow::before {
+  transform: rotate(-45deg);
+}
+
+.accordion_arrow::after {
+  right: 4px;
+  transform: rotate(-45deg);
+}
+
+[aria-expanded='true'] .accordion_arrow::after {
+  transform: rotate(45deg);
+}
+
+.accordion_arrow::before,
+.accordion_arrow::after {
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+.accordion_info {
+  lost-utility: clearfix;
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #adadad;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+
+.accordion_info li {
+  float: left;
+  margin-right: 10px;
+}
+
+.accordion_list {
+    margin-top: 20px;
+}
+
+.accordion_list .list_item {
+  margin-bottom: 20px;
+  lost-utility: clearfix;
+}
+
+.item_actions {
+  float: left;
+  width: 120px;
+}
+
+.actions_validations {
+  lost-utility: clearfix;
+}
+
+.validations_box {
+  width: 55px;
+  height: 6px;
+  border-radius: 30px;
+  background: $n40;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.validations_box:last-of-type {
+  margin-right: 0;
+}
+
+.item_actions button {
+  width: 120px;
+  height: 30px;
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.item_info {
+  margin-left: 130px;
+}
+
+.event_info {
+  background: $n20;
+  border-radius:2px;
+  padding:10px;
+}
+
+.info_title {
+  lost-utility: clearfix;
+  height: 24px;
+}
+
+.event_info img {
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  float: left;
+}
+
+.event_info h3 {
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: .5px;
+  float: left;
+  font-size: 14px;
+  line-height: 24px;
+  margin-left: 5px;
+}
+
+.event_info p {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.info_validation {
+  lost-utility: clearfix;
+  margin-top: 10px;
+}
+
+.info_validation .validation_item {
+  float: left;
+  margin-right: 10px;
+  font-style: italic;
+  color: $n500;
+  font-size: 14px;
+}
+
+.info_validation .validation_item span {
+  vertical-align: sub;
+} 
+
+
+.filter .filter_item {
+    lost-column: 1/4;
+}
+
+.filter {
+    lost-utility: clearfix;
+    margin-top: 20px;
+}
