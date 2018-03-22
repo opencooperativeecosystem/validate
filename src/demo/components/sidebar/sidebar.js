@@ -10,7 +10,6 @@ const Sidebar = (props) => {
   //   r[type].push(a)
   //   return r
   // }, Object.create(null))
-  console.log('qui ci entra')
   return (
     <div>
       <div className={style.sidebar_mobile + ' ' + style.sidebar_mobile_active}>
@@ -45,7 +44,7 @@ const Sidebar = (props) => {
       <header className={style.sidebar_header}>
       <div className={style.header_menu}>
         <div className={style.header_profile}>
-          <NavLink to={'/agent/' + props.data.id}>
+          <NavLink to={'work/agent/' + props.data.id}>
             <div className={style.data_image}>
               <img src={props.data.image} />
             </div>
