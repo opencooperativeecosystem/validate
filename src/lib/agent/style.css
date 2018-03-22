@@ -215,11 +215,22 @@
 }
 
 .info_title {
-lost-utility: clearfix;
+  lost-utility: clearfix;
   height: 24px;
+  float: none;
+}
+
+.info_title:before, .info_title:after {
+    content: " ";
+    display: table; 
+}
+
+.info_title:after {
+    clear: both; 
 }
 
 .info_description {
+    margin-top: 10px;
     lost-utility: clearfix;
 }
 
