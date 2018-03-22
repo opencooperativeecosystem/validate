@@ -18,7 +18,7 @@ const App = (props) => {
             <div className={style.wrapper_list}>
               {viewer.myAgent.agentRelationships.map((item, i) => (
                 <div className={style.list_item} key={i}>
-                  <Link to={`${props.match.url}/agent/${item.object.id}`}>
+                  <Link to={`/validate/agent/${item.object.id}`}>
                     <h3>{item.object.name}</h3>
                     <h5>{item.object.note}</h5>
                     <h6>{item.relationship.label}</h6>

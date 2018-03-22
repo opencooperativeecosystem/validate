@@ -7,11 +7,10 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 import {ApolloProvider} from 'react-apollo'
 import {client, store} from './store'
 import { Provider } from 'react-redux'
-import AppTemplate from './templates/AppTemplate'
+import PrivateRoute from './templates/AppTemplate'
 import { Notifs } from 'redux-notifications'
 import style from './base.css'
-import Validate from '../lib/index'
-
+import Validate from '../lib/validate'
 function CustomNotif (props) {
   let type
   if (props.kind === 'danger') { type = style.danger } else
@@ -36,12 +35,10 @@ ReactDOM.render(
           actionLabel='close'
         />
         <Route exact path='/login' component={Login} />
-        <AppTemplate>
-          <Route exact path='/' component={() => (<h1>overview</h1>)} />
-          <Route path='/work' component={() => <h1>work</h1>} />
-          <Route path='/validate' component={Validate} />
-          <Route path='/settings' component={Settings} />
-        </AppTemplate>
+        <PrivateRoute exact path='/' component={() => (<h1>overview</h1>)} />
+        <PrivateRoute path='/work' component={() => (<h1>overview</h1>)} />
+        <PrivateRoute path='/validate' component={Validate} />
+        <PrivateRoute path='/settings' component={Settings} />
         </div>
       </Router>
     </Provider>

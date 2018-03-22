@@ -4,7 +4,7 @@ import Agent from './agent/wrapper'
 import App from './App'
 import {Route} from 'react-router-dom'
 
-const Work = ({match}) => (
+const Validate = ({match}) => (
   <div>
     <Route exact path={match.url} component={App} />
     <Route path={`${match.url}/agent/:id`} component={Agent} />
@@ -12,4 +12,4 @@ const Work = ({match}) => (
   </div>
 )
 
-export default Work
+export default Validate
