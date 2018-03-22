@@ -17,7 +17,7 @@ class AgentWrapper extends React.Component {
 
 export default graphql(getClaims, {
   options: (props) => ({ variables: {
-    token: localStorage.getItem('token'),
+    token: localStorage.getItem('oce_token'),
     id: Number(props.match.params.id)
   }}),
   props: ({ ownProps, data: { viewer, loading, error, refetch } }) => ({

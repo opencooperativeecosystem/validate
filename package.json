@@ -1,6 +1,6 @@
 {
   "name": "oce-validate",
-  "version": "0.0.12",
+  "version": "0.1.00",
   "description": "A react module to handle validation in loosely groups of peers based on REA syntax",
   "main": "build/index.js",
   "scripts": {

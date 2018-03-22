@@ -60,6 +60,6 @@ query ($token: String) {
 
 export default graphql(agentPlans, {
   options: (props) => ({variables: {
-    token: localStorage.getItem('token')
+    token: localStorage.getItem('oce_token')
 }})
 })(App)
