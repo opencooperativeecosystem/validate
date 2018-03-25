@@ -39,7 +39,7 @@ ReactDOM.render(
         <PrivateRoute path='/work' component={() => (<h1>overview</h1>)} />
         <PrivateRoute path='/validate' component={Validate} />
         <PrivateRoute path='/settings' component={Settings} />
-        </div>
+      </div>
       </Router>
     </Provider>
   </ApolloProvider>,

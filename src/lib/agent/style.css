@@ -49,7 +49,7 @@
 }
 
 .accordion {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border-left: 1px solid rgba(0, 0, 0, 0.1); */
   border-radius: 2px;
   margin-top: 20px;
 }
@@ -66,12 +66,36 @@
   text-align: left;
   border: none;
   position: relative;
+  border: 1px solid #C1C7D0;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.accordion_title:last-of-type {
+  margin-bottom: 0;
+}
+
+.title_plan {
+ background: #091E42;
+ color: #fff;
+ border: 1px solid #091E42;
+}
+.title_process {
+ background:  #505F79;
+ color: #fff;
+ border: 1px solid #505F79;
+}
+.title_commitment {
+ background:  #C1C7D0;
+ color: #343434;
+ border: 1px solid #C1C7D0;
 }
 
 .accordion_title h3 {
   margin: 0;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  margin-left: 30px;
   text-decoration: underline;
 }
 
@@ -80,13 +104,16 @@
 }
 
 .accordion_title:hover {
-  background-color: #ddd;
+  border: 1px solid #61CFF4;
 }
 
 .accordion_body {
-  padding: 20px;
+  padding-left: 20px;
   display: block;
   animation: fadein 0.35s ease-in;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  padding-left: 20px;
 }
 
 .accordion_body_hidden {
@@ -107,7 +134,7 @@
   height: 12px;
   position: absolute;
   top: 50%;
-  right: 20px;
+  left: 10px;
   margin-top: -6px;
 }
 
@@ -168,7 +195,7 @@
 }
 
 .accordion_list .list_item {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   lost-utility: clearfix;
 }
 
@@ -179,39 +206,67 @@
 
 .actions_validations {
   lost-utility: clearfix;
+  margin: -10px;
 }
 
 .validations_box {
-  width: 55px;
-  height: 6px;
-  border-radius: 30px;
+  width: 50%;
+  height: 3px;
+  float: left;
+  /* border-radius: 30px; */
   background: $n40;
-  margin-right: 10px;
-  display: inline-block;
+  /* margin-right: 10px; */
+  /* display: inline-block; */
+  margin-bottom: 10px;
+  
 }
 
 .validations_box:last-of-type {
   margin-right: 0;
 }
 
-.item_actions button {
+.actions_validate {
   width: 120px;
   height: 30px;
-  margin-top: 5px;
+  margin-top: 10px;
   font-weight: 500;
   font-size: 14px;
   border-radius: 2px;
   cursor: pointer;
+  /* float: right; */
 }
 
 .item_info {
-  margin-left: 130px;
+  /* margin-left: 130px; */
 }
 
 .event_info {
   background: $n20;
   border-radius:2px;
   padding:10px;
+  lost-utility: clearfix;
+}
+
+.event_secondary {
+  lost-utility: clearfix;
+  margin-bottom: -40px;
+}
+
+.validations_active {
+  background: $g400;
+}
+
+.event_secondary span {
+  float: right;
+  margin: 0;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid $n40;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 10px;
+  margin-left: 10px;
+  font-weight: 400;
 }
 
 .info_title {
@@ -230,7 +285,7 @@
 }
 
 .info_description {
-    margin-top: 10px;
+    margin-top: 20px;
     lost-utility: clearfix;
 }
 
@@ -260,7 +315,8 @@
 
 .info_validation {
   lost-utility: clearfix;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .info_validation .validation_item {
@@ -269,6 +325,7 @@
   font-style: italic;
   color: $n500;
   font-size: 14px;
+  
 }
 
 .info_validation .validation_item span {
