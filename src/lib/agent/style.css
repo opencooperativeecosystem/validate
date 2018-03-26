@@ -69,6 +69,7 @@
   border: 1px solid #C1C7D0;
   margin-bottom: 5px;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 .accordion_title:last-of-type {
@@ -225,6 +226,12 @@
   margin-right: 0;
 }
 
+.actions_unvalidate {
+  width: 170px !important;
+  background: #FFAB00 !important;
+  color: #172B4D;
+}
+
 .actions_validate {
   width: 120px;
   height: 30px;
@@ -233,6 +240,12 @@
   font-size: 14px;
   border-radius: 2px;
   cursor: pointer;
+  background: #0052CC;
+  color: #fff;
+  font-weight: 600 !important;
+  border: none;
+  border-radius: 3px !important;
+  letter-spacing: 0px !important;
   /* float: right; */
 }
 

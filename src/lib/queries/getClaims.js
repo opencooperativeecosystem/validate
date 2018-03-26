@@ -32,6 +32,7 @@ query ($token: String, $id: Int) {
                   id
                   action
                   validations {
+                    id
                     validatedBy {
                       name
                       id

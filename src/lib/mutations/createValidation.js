@@ -10,8 +10,16 @@ mutation ($token: String!, $validatedById: Int!, $economicEventId: Int!) {
       id
       validatedBy {
         name
+        id
       }
       economicEvent {
+        id
+        inputOf {
+          id
+          processPlan {
+            id
+          }
+        }
         action
         affectedQuantity {
           numericValue

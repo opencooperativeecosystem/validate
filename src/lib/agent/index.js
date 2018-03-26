@@ -11,8 +11,7 @@ import {
   AccordionItemBody
 } from 'react-accessible-accordion'
 
-const Agent = ({data, createValidation}) => {
-  console.log(data)
+const Agent = ({data, createValidation, deleteValidation, myAgentId}) => {
   return (
     <div className={style.validate_wrapper}>
       <section className={style.wrapper_header}>
@@ -20,7 +19,7 @@ const Agent = ({data, createValidation}) => {
       </section>
       <HeroData data={data} />
       <section className={style.wrapper_list}>
-        <Filter />
+        {/* <Filter /> */}
         <div className={style.accordion_list}>
           {data.agentPlans === 0
           ? <div className={style.list_item}>
@@ -50,7 +49,7 @@ const Agent = ({data, createValidation}) => {
                             </AccordionItemTitle>
                               <AccordionItemBody key={z + 3} className={style.accordion_body} hideBodyClassName={style.accordion_body_hidden}>
                                 {commitment.fulfilledBy.map((event, o) => (
-                                  <SingleValidation createValidation={createValidation} key={o} style={style} event={event.fulfilledBy} />
+                                  <SingleValidation deleteValidation={deleteValidation} myId={myAgentId} createValidation={createValidation} key={o} style={style} event={event.fulfilledBy} />
                                 ))}
                               </AccordionItemBody>
                             </AccordionItem>
@@ -127,7 +126,7 @@ const HeroData = ({data}) => (
   </section>
 )
 
-const SingleValidation = ({style, event, createValidation}) => {
+const SingleValidation = ({style, event, createValidation, deleteValidation, myId}) => {
   let validations = []
   for (let i = 0; i < 2; i++) {
     if (event.validations[i]) {
@@ -135,6 +134,18 @@ const SingleValidation = ({style, event, createValidation}) => {
     } else {
       validations.push(<span key={i} className={style.validations_box} />)
     }
+  }
+  
+  let button
+  if (event.validations.findIndex(item => Number(item.validatedBy.id) === Number(myId)) === -1 && event.validations.length >= 2) {
+    button = ''
+  } else if (event.provider.id === myId) {
+    button = ''
+  } else if (event.validations.some(item => Number(item.validatedBy.id) === Number(myId))) {
+    let itemValidated = event.validations.find(item => Number(item.validatedBy.id) === Number(myId))
+    button = <button className={style.actions_validate + ' ' + style.actions_unvalidate} onClick={() => deleteValidation(itemValidated.id)}>Cancel validation</button>
+  } else {
+    button = <button className={style.actions_validate} onClick={() => createValidation(event.id)}>Validate</button>
   }
   return (
     <div className={style.list_item}>
@@ -152,7 +163,7 @@ const SingleValidation = ({style, event, createValidation}) => {
             <h3><b>{event.provider.name}</b> {event.action} <b>{event.affectedQuantity.numericValue + ' ' + event.affectedQuantity.unit.name}</b> in process: <b>{event.inputOf.name}</b></h3>
           </div>
           <div className={style.info_description}><p>{event.note}</p></div>
-          <button className={style.actions_validate} onClick={() => createValidation(event.id)}>Validate</button>
+          {button}
         </div>
         <div className={style.info_validation}>
           {event.validations
