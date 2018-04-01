@@ -12,6 +12,7 @@ import {
 } from 'react-accessible-accordion'
 
 const Agent = ({data, createValidation, deleteValidation, myAgentId}) => {
+  console.log(data)
   return (
     <div className={style.validate_wrapper}>
       <section className={style.wrapper_header}>
@@ -28,14 +29,14 @@ const Agent = ({data, createValidation, deleteValidation, myAgentId}) => {
             // <SingleValidation createValidation={createValidation} key={i} style={style} event={event} />
             <Accordion accordion={false} className={style.accordion}>
               {data.agentPlans.map((plan, i) => (
-                <AccordionItem key={i} className={style.accordion_item} hideBodyClassName>
+                <AccordionItem expanded key={i} className={style.accordion_item} hideBodyClassName>
                   <AccordionItemTitle key={i++} className={style.accordion_title + ' ' + style.title_plan} hideBodyClassName>
                     <h3 key={i + 2}>{plan.name}</h3>
                     <div className={style.accordion_arrow} role="presentation" />
                   </AccordionItemTitle>
                   <AccordionItemBody key={i + 3} className={style.accordion_body} hideBodyClassName={style.accordion_body_hidden}>
                     {plan.planProcesses.map((process, j) => (
-                      <AccordionItem key={j} className={style.accordion_item} hideBodyClassName>
+                      <AccordionItem expanded key={j} className={style.accordion_item} hideBodyClassName>
                       <AccordionItemTitle key={j++} className={style.accordion_title + ' ' + style.title_process} hideBodyClassName>
                         <h3>{process.name}</h3>
                         <div className={style.accordion_arrow} role="presentation" />
@@ -44,7 +45,7 @@ const Agent = ({data, createValidation, deleteValidation, myAgentId}) => {
                         {process.committedInputs.map((commitment, z) => (
                           <AccordionItem key={z} className={style.accordion_item} hideBodyClassName>
                             <AccordionItemTitle key={z++} className={style.accordion_title + ' ' + style.title_commitment} hideBodyClassName>
-                              <h3 key={z + 2}>{commitment.action + ' ' + commitment.committedQuantity.numericValue + ' ' + commitment.committedQuantity.unit.name + ' of ' + commitment.resourceClassifiedAs.name}</h3>
+                              <h3 key={z + 2}>{commitment.note ? commitment.note : commitment.action + ' ' + commitment.committedQuantity.numericValue + ' ' + commitment.committedQuantity.unit.name + ' of ' + commitment.resourceClassifiedAs.name}</h3>
                               <div className={style.accordion_arrow} role="presentation" />
                             </AccordionItemTitle>
                               <AccordionItemBody key={z + 3} className={style.accordion_body} hideBodyClassName={style.accordion_body_hidden}>
@@ -158,7 +159,7 @@ const SingleValidation = ({style, event, createValidation, deleteValidation, myI
             <span>eventId: #{event.id}</span>
             <span>Date: {event.start}</span>
           </div>
-          <div className={style.info_title}>
+          <div className={style.infos_title}>
             <img src={event.provider.image} />
             <h3><b>{event.provider.name}</b> {event.action} <b>{event.affectedQuantity.numericValue + ' ' + event.affectedQuantity.unit.name}</b> in process: <b>{event.inputOf.name}</b></h3>
           </div>

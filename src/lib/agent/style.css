@@ -262,7 +262,7 @@
 
 .event_secondary {
   lost-utility: clearfix;
-  margin-bottom: -40px;
+  margin-bottom: 0px;
 }
 
 .validations_active {
@@ -282,23 +282,25 @@
   font-weight: 400;
 }
 
-.info_title {
+.infos_title {
   lost-utility: clearfix;
   height: 24px;
   float: none;
+  display: table;
+  margin-top: -30px;
 }
 
-.info_title:before, .info_title:after {
+.infos_title:before, .infos_title:after {
     content: " ";
     display: table; 
 }
 
-.info_title:after {
+.infos_title:after {
     clear: both; 
 }
 
 .info_description {
-    margin-top: 20px;
+    margin-top: 0px;
     lost-utility: clearfix;
 }
 

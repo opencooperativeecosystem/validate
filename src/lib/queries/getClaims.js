@@ -12,6 +12,7 @@ query ($token: String, $id: Int) {
         agentPlans(month:3, year: 2018) {
           name
           id
+          plannedOn
           planProcesses(month:3, year: 2018) {
             name
             id

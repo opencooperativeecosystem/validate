@@ -20,13 +20,6 @@ mutation ($token: String!, $validatedById: Int!, $economicEventId: Int!) {
             id
           }
         }
-        action
-        affectedQuantity {
-          numericValue
-          unit {
-            name
-          }
-        }
       }
       validationDate
     }
