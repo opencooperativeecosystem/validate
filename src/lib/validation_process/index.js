@@ -15,7 +15,7 @@ const Canvas = (props) => {
     <section className={style.surface} >
       <header className={style.header}>
         <h1 className={style.title}>
-          <Link to={'/validate/agent/' + data.scope.id}>{data.scope.name}</Link> > <Link to={'/validate/plan/' + data.processPlan.id} > {data.processPlan.name}</Link> > {data.name}
+        <Link to={'/validate/'}>Validate</Link> > <Link to={'/validate/plan/' + data.processPlan.id} > {data.processPlan.name}</Link> > {data.name}
         </h1>
       </header>
       <div className={style.canvas_board + ' ' + style.wrapper_accordion}>

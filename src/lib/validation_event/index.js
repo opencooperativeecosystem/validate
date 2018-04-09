@@ -9,7 +9,7 @@ const Canvas = (props) => {
     <section className={style.surface} >
       <header className={style.header}>
         <h1 className={style.title}>
-          <Link to={'/validate/agent/' + data.scope.id}>{data.scope.name}</Link> > <Link to={'/validate/plan/' + data.inputOf.processPlan.id }>{data.inputOf.processPlan.name}</Link> > <Link to={'/validate/process/' + data.inputOf.id }>{data.inputOf.name}</Link> > <Link to={'/validate/commitment/' + data.fulfills[0].fulfills.id}>{data.fulfills[0].fulfills.note ? data.fulfills[0].fulfills.note : data.action + ' ' + data.fulfills[0].fulfills.committedQuantity.numericValue + ' ' + data.fulfills[0].fulfills.committedQuantity.unit.name }</Link> > {data.action} {data.affectedQuantity.numericValue + ' ' + data.affectedQuantity.unit.name}
+        <Link to={'/validate/'}>Validate</Link> > <Link to={'/validate/plan/' + data.inputOf.processPlan.id }>{data.inputOf.processPlan.name}</Link> > <Link to={'/validate/process/' + data.inputOf.id }>{data.inputOf.name}</Link> > <Link to={'/validate/commitment/' + data.fulfills[0].fulfills.id}>{data.fulfills[0].fulfills.note ? data.fulfills[0].fulfills.note : data.action + ' ' + data.fulfills[0].fulfills.committedQuantity.numericValue + ' ' + data.fulfills[0].fulfills.committedQuantity.unit.name }</Link> > {data.action} {data.affectedQuantity.numericValue + ' ' + data.affectedQuantity.unit.name}
         </h1>
       </header>
       <div className={style.canvas_board + ' ' + style.wrapper_accordion}>
